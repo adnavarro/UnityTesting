@@ -1,5 +1,5 @@
 # Unity Testing Repository
-![Unity](./Unity.jpg)
+![unity](./unity.jpg)
 This repository is made for Unity testing purposes
 
 ## Games
