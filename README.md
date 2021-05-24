@@ -1,6 +1,6 @@
 # Unity Testing Repository
 ![unity](./unity.jpg)
-This repository is made for Unity testing purposes
+This repository is made for Unity testing purposes.
 
 ## Games
 - [Space Shooter](https://github.com/adnavarro/UnityTesting/tree/Space-Shooter)
