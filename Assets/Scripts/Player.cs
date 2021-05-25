@@ -15,25 +15,23 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CalculateMovement();
+    }
+
+    void CalculateMovement()
+    {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
         transform.Translate(new Vector3(horizontalInput, verticalInput) * _speed * Time.deltaTime);
-        
+
+        // Up and Down bounds
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3.95f, 0), 0);
+
         // Left and Right bounds
         if (transform.position.x >= 11.5f || transform.position.x <= -11.5f)
         {
             transform.position = new Vector3(-transform.position.x, transform.position.y, 0);
-        }
-
-        // Up and Down bounds
-        if (transform.position.y >= 0)
-        {
-            transform.position = new Vector3(transform.position.x, 0, 0);
-        }
-        else if (transform.position.y <= -3.95f)
-        {
-            transform.position = new Vector3(transform.position.x, -3.95f, 0);
         }
     }
 }
