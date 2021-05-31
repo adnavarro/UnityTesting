@@ -29,13 +29,23 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("Hit by: " + other.transform.name);
 
-        if (other.transform.name == "Player")
+        if (other.tag == "Player")
         {
-            Destroy(GameObject.FindWithTag(other.transform.name));
+            Player player = other.transform.GetComponent<Player>();
+            if (player != null)
+            {
+                player.Damage();
+            }
+            else
+            {
+                Debug.Log("WARNING: The component Player doesn't exist");
+            }
+            Destroy(this.gameObject);
         }
-        else if (other.transform.name == "Laser(Clone)")
+
+        if (other.tag == "Laser")
         {
-            Destroy(GameObject.FindWithTag("Laser"));
+            Destroy(GameObject.FindWithTag(other.tag));
             Destroy(this.gameObject);
         }
     }
