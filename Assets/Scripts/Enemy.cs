@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                Debug.Log("WARNING: The component Player doesn't exist");
+                Debug.Log("ERROR: The component Player is null");
             }
             Destroy(this.gameObject);
         }
