@@ -27,10 +27,10 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Hit by: " + other.transform.name);
 
         if (other.tag == "Player")
         {
+            Debug.Log("Hit by: " + other.tag);
             Player player = other.transform.GetComponent<Player>();
             if (player != null)
             {
@@ -45,6 +45,7 @@ public class Enemy : MonoBehaviour
 
         if (other.tag == "Laser")
         {
+            Debug.Log("Hit by: " + other.tag);
             Destroy(GameObject.FindWithTag(other.tag));
             Destroy(this.gameObject);
         }
