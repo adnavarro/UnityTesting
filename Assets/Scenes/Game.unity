@@ -349,7 +349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 7421249518766999199, guid: c36aa30a93162604ab34af6f7422f97e,
     type: 3}
-  _powerupPrefab: {fileID: 7201499014826791215, guid: f2d05c8a5d23e724bb91ec21ae82c2e6,
+  _tripleShootPowerupPrefab: {fileID: 7201499014826791215, guid: f2d05c8a5d23e724bb91ec21ae82c2e6,
     type: 3}
   _enemyContainer: {fileID: 66148037}
 --- !u!4 &837662061
