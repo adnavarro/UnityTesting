@@ -349,6 +349,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 7421249518766999199, guid: c36aa30a93162604ab34af6f7422f97e,
     type: 3}
+  _powerupPrefab: {fileID: 7201499014826791215, guid: f2d05c8a5d23e724bb91ec21ae82c2e6,
+    type: 3}
   _enemyContainer: {fileID: 66148037}
 --- !u!4 &837662061
 Transform:
@@ -491,6 +493,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _laserPrefab: {fileID: 3940731945662069025, guid: 7388c2c9c756c444cb2348964f5c1c92,
+    type: 3}
+  _tripleShootPrefab: {fileID: 99753664853542131, guid: c7933a2cb8f8a364f88ba169efa349a5,
     type: 3}
   _fireRate: 0.15
   _lives: 3
