@@ -7,17 +7,19 @@ public class Player_0 : MonoBehaviour
     [SerializeField]
     private float _speed = 1.5f;
     private Vector3 moveDelta;
+    private Rigidbody2D rigidBody;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigidBody = GetComponent<Rigidbody2D>();
+        rigidBody.freezeRotation = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         CalculateMovement();
     }
+
     void CalculateMovement()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -34,6 +36,6 @@ public class Player_0 : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 0);
         }
 
-        transform.Translate(moveDelta * _speed * Time.deltaTime);
+        rigidBody.velocity = (moveDelta * _speed);
     }
 }
