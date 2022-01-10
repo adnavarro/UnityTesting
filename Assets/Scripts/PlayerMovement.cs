@@ -7,15 +7,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Player_0 PlayerScript;
     private float _speed = 1.5f;
     private Vector3 moveDelta;
-    // Start is called before the first frame update
+    
     void Start()
     {
         PlayerScript.GetComponent<Rigidbody2D>();
     }
+
     void FixedUpdate()
     {
         CalculateMovement();
     }
+
     void CalculateMovement()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
