@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] Player_0 PlayerScript;
+    [SerializeField] PlayerMain playerMain;
     private float _speed = 1.5f;
     private Vector3 moveDelta;
     
     void Start()
     {
-        PlayerScript.GetComponent<Rigidbody2D>();
+        playerMain.GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
@@ -27,14 +27,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (moveDelta.x > 0)
         {
-            PlayerScript.transform.localScale = Vector3.one;
+            playerMain.transform.localScale = Vector3.one;
         }
         else if (moveDelta.x < 0)
         {
-            PlayerScript.transform.localScale = new Vector3(-1, 1, 0);
+            playerMain.transform.localScale = new Vector3(-1, 1, 0);
         }
 
-        PlayerScript.Move(moveDelta, _speed);
+        playerMain.Move(moveDelta, _speed);
     }
 }
 
