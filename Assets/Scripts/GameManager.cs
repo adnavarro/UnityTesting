@@ -18,15 +18,26 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded += LoadState;
         DontDestroyOnLoad(gameObject);
     }
+
+    //Ressources
     public List<Sprite> playerSprites;
     public List<Sprite> weaponSprites;
     public List<int> weaponPrices;
     public List<int> xpTable;
 
+    //References
     public PlayerMain player;
+    public FloatingTextManager floatingTextManager;
 
+    //Logic
     public int money;
     public int experience;
+
+    //Floating Text
+    public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
+    {
+        floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
+    }
 
     public void SaveState()
     {
@@ -50,7 +61,6 @@ public class GameManager : MonoBehaviour
         else
         {
             string[] saveData = PlayerPrefs.GetString("SavedData").Split('|');
-
             money = int.Parse(saveData[1]);
             experience = int.Parse(saveData[2]);
         }

@@ -6,17 +6,12 @@ public class PlayerMain : MonoBehaviour
 {
     private Rigidbody2D rigidBody;
     
-
     void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         rigidBody.freezeRotation = true;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
     public void Move(Vector3 moveDelta, float speed)
     {
         rigidBody.velocity = (moveDelta * speed);
