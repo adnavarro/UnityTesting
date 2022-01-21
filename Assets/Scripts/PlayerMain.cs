@@ -12,7 +12,7 @@ public class PlayerMain : MonoBehaviour
         rigidBody.freezeRotation = true;
     }
 
-    public void Move(Vector3 moveDelta, float speed)
+    public void Move(Vector2 moveDelta, float speed)
     {
         rigidBody.velocity = (moveDelta * speed);
     }

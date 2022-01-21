@@ -6,13 +6,18 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] PlayerMain playerMain;
     private float _speed = 1.5f;
-    private Vector3 moveDelta;
+    private Vector2 moveDelta;
     
     void Start()
     {
         playerMain.GetComponent<Rigidbody2D>();
     }
 
+    void Update()
+    {
+        moveDelta.x = Input.GetAxis("Horizontal");
+        moveDelta.y = Input.GetAxis("Vertical");
+    }
     void FixedUpdate()
     {
         CalculateMovement();
@@ -20,18 +25,13 @@ public class PlayerMovement : MonoBehaviour
 
     void CalculateMovement()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
-        moveDelta = new Vector3(horizontalInput, verticalInput);
-
         if (moveDelta.x > 0)
         {
-            playerMain.transform.localScale = Vector3.one;
+            playerMain.transform.localScale = Vector2.one;
         }
         else if (moveDelta.x < 0)
         {
-            playerMain.transform.localScale = new Vector3(-1, 1, 0);
+            playerMain.transform.localScale = new Vector2(-1, 1);
         }
 
         playerMain.Move(moveDelta, _speed);
